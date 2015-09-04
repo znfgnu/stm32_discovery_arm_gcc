@@ -1,6 +1,6 @@
 
 # Put your stlink folder here so make burn will work.
-STLINK=~/stlink.git
+STLINK=/home/konrad/STMWorkspace/toolchain/stlink
 
 # Put your source files here (or *.c, etc)
 SRCS=main.c system_stm32f4xx.c
@@ -11,11 +11,14 @@ PROJ_NAME=blinky
 # Put your STM32F4 library code directory here
 STM_COMMON=../STM32F4-Discovery_FW_V1.1.0
 
+# gcc-arm-none-eabi bin directory here
+GCC_DIR=/home/konrad/STMWorkspace/toolchain/gcc-arm-none-eabi-4_9-2015q2/bin
+
 # Normally you shouldn't need to change anything below this line!
 #######################################################################################
 
-CC=arm-none-eabi-gcc
-OBJCOPY=arm-none-eabi-objcopy
+CC=$(GCC_DIR)/arm-none-eabi-gcc
+OBJCOPY=$(GCC_DIR)/arm-none-eabi-objcopy
 
 CFLAGS  = -g -O2 -Wall -Tstm32_flash.ld 
 CFLAGS += -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork

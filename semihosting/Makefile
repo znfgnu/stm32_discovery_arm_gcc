@@ -8,12 +8,15 @@ PROJ_NAME=hello_world
 # Put your STM32F4 library code directory here
 STM_COMMON=../STM32F4-Discovery_FW_V1.1.0
 
+# gcc-arm-none-eabi bin directory here
+GCC_DIR=/home/konrad/STMWorkspace/toolchain/gcc-arm-none-eabi-4_9-2015q2/bin
 
 # Normally you shouldn't need to change anything below this line!
 #######################################################################################
 
-CC=arm-none-eabi-gcc
-SIZE=arm-none-eabi-size
+CC=$(GCC_DIR)/arm-none-eabi-gcc
+SIZE=$(GCC_DIR)/arm-none-eabi-size
+GDB=$(GCC_DIR)/arm-none-eabi-gdb
 
 #Debug
 CFLAGS  = -ggdb -O0 -Wall -Tstm32_flash.ld 
@@ -48,7 +51,7 @@ clean:
 # Debugging targets
 #######################################################
 gdb: all
-	arm-none-eabi-gdb $(PROJ_NAME).elf
+	$(GDB) $(PROJ_NAME).elf
 
 # Start OpenOCD GDB server (supports semihosting)
 openocd: 
