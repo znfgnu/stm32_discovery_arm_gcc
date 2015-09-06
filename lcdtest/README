@@ -1,0 +1,8 @@
+With linking *.c:
+   text	   data	    bss	    dec	    hex	filename
+  81460	   2480	   2388	  86328	  15138	lcdtest.elf
+
+With linking only essential sources:
+   text    data     bss	    dec	    hex	filename
+  35020	   2480	   2392	  39892	   9bd4	lcdtest.elf
+
