@@ -32,6 +32,7 @@
 
 #define STM32F407VG
 
+#define USE_STDPERIPH_DRIVER
 #define USE_FULL_ASSERT 1
 
 #endif

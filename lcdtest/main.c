@@ -12,9 +12,10 @@
  *	@stdperiph	STM32F4xx Standard peripheral drivers version 1.5.0 or greater required
  */
 /* Include core modules */
+#include "defines.h"
+#include "stm32f4xx_conf.h"
 #include "stm32f4xx.h"
 /* Include my libraries here */
-#include "defines.h"
 #include "tm_stm32f4_delay.h"
 #include "tm_stm32f4_disco.h"
 #include "tm_stm32f4_ssd1306.h"
